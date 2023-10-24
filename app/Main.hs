@@ -60,7 +60,7 @@ iter2 n f
 --8
 splits :: [a] -> [([a],[a])]
 splits xs = zip left right
-    where 
-        split = [[c] | c <- xs]
+    where
+        split = map (: []) xs
         left = scanl (++) [] split
         right = scanr (++) [] split
