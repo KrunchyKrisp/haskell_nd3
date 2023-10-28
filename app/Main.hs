@@ -38,7 +38,7 @@ length2 xs = foldr (\_ y -> y + 1) 0 xs
 
 -- 5
 ff :: Integer -> [Integer] -> Integer
-ff x xs = (last . filter (<= x) . scanl (+) 0 . map (10 *) . filter (>= 0)) xs
+ff x = last . filter (<= x) . scanl (+) 0 . map (10 *) . filter (>= 0)
 
 -- 6
 total :: (Integer -> Integer) -> Integer -> Integer
