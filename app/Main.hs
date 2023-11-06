@@ -49,7 +49,6 @@ total2 f n = foldr ((+) . f) 0 [0 .. n]
 
 -- 7
 iter1, iter2 :: Int -> (a -> a) -> (a -> a)
-iter1 1 f = f
 iter1 n f
     | n <= 0 = id
     | otherwise = iter1 (n - 1) f . f
