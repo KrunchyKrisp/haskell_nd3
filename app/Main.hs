@@ -58,7 +58,7 @@ iter1 n f
 	| otherwise = iter1 (n - 1) f . f
 iter2 n f
 	| n <= 0 = id
-	| otherwise = foldr (.) f (replicate (n - 1) f)
+	| otherwise = foldr (.) id (replicate n f)
 
 -- 8
 splits :: [a] -> [([a], [a])]
