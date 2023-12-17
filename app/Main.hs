@@ -49,7 +49,7 @@ ff x = last . filter (<= x) . scanl (+) 0 . map (10 *) . filter (>= 0)
 -- 6
 total1, total2 :: (Integer -> Integer) -> Integer -> Integer
 total1 f n = (sum . map f) [0 .. n]
-total2 f n = foldr ((+) . f) 0 [0 .. n]
+total2 f n = foldl ((+) . f) 0 [1 .. n]
 
 -- 7
 iter1, iter2 :: Int -> (a -> a) -> (a -> a)
