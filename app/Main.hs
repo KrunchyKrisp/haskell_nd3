@@ -62,8 +62,8 @@ iter2 n f
 
 -- 8
 splits :: [a] -> [([a], [a])]
-splits xs = zip left right
+splits xs = zip left right --[("","Spy"),("S","py"),("Sp","y"),("Spy","")]
 	where
-		split = map (: []) xs
-		left = scanl (++) [] split
-		right = scanr (++) [] split
+		split = map (: []) xs --["S","p","y"]
+		left = scanl (++) [] split --["","S","Sp","Spy"]
+		right = scanr (++) [] split --["Spy","py","y",""]
